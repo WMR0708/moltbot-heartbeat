@@ -25,9 +25,6 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Install deps
-        run: npm install
-
       - name: Run pipeline
         run: |
           node collect.js
