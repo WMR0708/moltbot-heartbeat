@@ -1,0 +1,16 @@
+name: Heartbeat
+
+on:
+  schedule:
+    - cron: "0 */3 * * *"   # 每3小时一次（UTC时间）
+  workflow_dispatch:
+
+jobs:
+  beat:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run heartbeat
+        run: node heartbeat.js
+        env:
+          MOLTBOOK_API_KEY: ${{ secrets.MOLTBOOK_API_KEY }}
