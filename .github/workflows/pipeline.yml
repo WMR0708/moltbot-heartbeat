@@ -25,4 +25,4 @@ jobs:
           node-version: "20"
 
       - name: Run heartbeat
-        run: node "心跳.js"
+        run: node "heartbeat.js"
